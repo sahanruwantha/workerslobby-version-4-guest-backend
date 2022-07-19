@@ -47,7 +47,6 @@ model PendingToEngineer {
 }
 model User {
       userid BigInt @id @default(autoincrement())
-      userId String
       companyId BigInt
       firstName String
       lastName String
