@@ -11,11 +11,11 @@ datasource db {
 }
 
 model Ticket {
-  ticketId BigInt @id @default(autoincrement())
+  ticketId Int @id @default(autoincrement())
   ticketName String
   ticketDescription String
 
-  clientId BigInt
+  clientId Int
   state Boolean
 
   createdAt DateTime @default(now())
@@ -36,18 +36,18 @@ model Task {
 
 
 model Company {
-    companyId BigInt @id @default(autoincrement())
+    companyId Int @id @default(autoincrement())
     companyName String
 }
 model PendingToClient{
-    taskId BigInt @id
+    taskId Int @id
 }
 model PendingToEngineer {
     ticketId BigInt @id
 }
 model User {
-      userid BigInt @id @default(autoincrement())
-      companyId BigInt
+      userid Int @id @default(autoincrement())
+      companyId Int
       firstName String
       lastName String
       userName String
@@ -57,4 +57,3 @@ model User {
 
       createdAt DateTime @default(now())
 }
-

@@ -1,9 +1,9 @@
 -- CreateTable
 CREATE TABLE `Ticket` (
-    `ticketId` BIGINT NOT NULL AUTO_INCREMENT,
+    `ticketId` INTEGER NOT NULL AUTO_INCREMENT,
     `ticketName` VARCHAR(191) NOT NULL,
     `ticketDescription` VARCHAR(191) NOT NULL,
-    `clientId` BIGINT NOT NULL,
+    `clientId` INTEGER NOT NULL,
     `state` BOOLEAN NOT NULL,
     `createdAt` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `updatedAt` DATETIME(3) NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE `Task` (
 
 -- CreateTable
 CREATE TABLE `Company` (
-    `companyId` BIGINT NOT NULL AUTO_INCREMENT,
+    `companyId` INTEGER NOT NULL AUTO_INCREMENT,
     `companyName` VARCHAR(191) NOT NULL,
 
     PRIMARY KEY (`companyId`)
@@ -33,7 +33,7 @@ CREATE TABLE `Company` (
 
 -- CreateTable
 CREATE TABLE `PendingToClient` (
-    `taskId` BIGINT NOT NULL,
+    `taskId` INTEGER NOT NULL,
 
     PRIMARY KEY (`taskId`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -47,8 +47,8 @@ CREATE TABLE `PendingToEngineer` (
 
 -- CreateTable
 CREATE TABLE `User` (
-    `userid` BIGINT NOT NULL AUTO_INCREMENT,
-    `companyId` BIGINT NOT NULL,
+    `userid` INTEGER NOT NULL AUTO_INCREMENT,
+    `companyId` INTEGER NOT NULL,
     `firstName` VARCHAR(191) NOT NULL,
     `lastName` VARCHAR(191) NOT NULL,
     `userName` VARCHAR(191) NOT NULL,
